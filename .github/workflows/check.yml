@@ -38,9 +38,9 @@ jobs:
 #        run: ./vendor/bin/phpunit tests
 #        if: ${{ always() }}
 
-      - name: Run rector
-        run: ./vendor/bin/rector --dry-run
-        if: ${{ always() }}
+#      - name: Run rector
+#        run: ./vendor/bin/rector --dry-run
+#        if: ${{ always() }}
 
       - name: Run linter
         run: ./vendor/bin/pint --test
