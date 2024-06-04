@@ -30,14 +30,20 @@ jobs:
       - name: Install composer dependencies
         uses: ramsey/composer-install@3.0.0
 
-      - name: Run static analysis
-        run: ./vendor/bin/phpstan analyse
+      - name: Run linter
+        if: ${{ always() }}
+        uses: aglipanci/laravel-pint-action@2.3.0
+        with:
+          testMode: true
 
       - name: Run tests
         run: ./vendor/bin/phpunit tests
+        if: ${{ always() }}
+
+      - name: Run static analysis
+        run: ./vendor/bin/phpstan analyse
+        if: ${{ always() }}
 
       - name: Run rector
         run: ./vendor/bin/rector --dry-run
-
-      - name: Run linter
-        run: ./vendor/bin/pint --test
+        if: ${{ always() }}
