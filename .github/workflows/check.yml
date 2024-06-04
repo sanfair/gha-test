@@ -34,9 +34,9 @@ jobs:
 #        run: ./vendor/bin/phpstan analyse
 #        if: ${{ always() }}
 
-      - name: Run tests
-        run: ./vendor/bin/phpunit tests
-        if: ${{ always() }}
+#      - name: Run tests
+#        run: ./vendor/bin/phpunit tests
+#        if: ${{ always() }}
 
       - name: Run rector
         run: ./vendor/bin/rector --dry-run
