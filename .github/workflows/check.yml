@@ -44,6 +44,6 @@ jobs:
 
       - name: Run linter
         if: ${{ always() }}
-        uses: aglipanci/laravel-pint-action
+        uses: aglipanci/laravel-pint-action@2.3.0
         with:
           testMode: true
